@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Formulario.css';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState('');
@@ -35,44 +36,48 @@ const Formulario = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="formulario" onSubmit={handleSubmit}>
+      <label className="formulario-label">
         Nombre:
         <input
+          className="formulario-input"
           type="text"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
         />
       </label>
       <br />
-      <label>
+      <label className="formulario-label">
         Apellido:
         <input
+          className="formulario-input"
           type="text"
           value={apellido}
           onChange={(e) => setApellido(e.target.value)}
         />
       </label>
       <br />
-      <label>
+      <label className="formulario-label">
         Teléfono:
         <input
+          className="formulario-input"
           type="tel"
           value={telefono}
           onChange={handleTelefonoChange}
         />
       </label>
       <br />
-      <label>
+      <label className="formulario-label">
         Email:
         <input
+          className="formulario-input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </label>
       <br />
-      <button type="submit">Enviar</button>
+      <button className="formulario-submit" type="submit">Enviar</button>
     </form>
   );
 };
